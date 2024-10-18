@@ -1,0 +1,4 @@
+name: "appserver"
+tcp_port: ""
+http_port: ":8888"
+mis_key: "md5key#@byonegames.com"

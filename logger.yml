@@ -1,0 +1,5 @@
+level: "debug"
+file_path: "./logs/%v.log"
+max_age: 7
+max_size: 128
+max_backups: 5
