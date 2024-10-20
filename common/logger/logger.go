@@ -54,9 +54,7 @@ func init() {
 	initConfig()
 
 	coreList := make([]zapcore.Core, 0)
-
 	encoder := zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
-	coreList = append(coreList, zapcore.NewCore(encoder, zapcore.AddSync(os.Stdout), zapcore.DebugLevel))
 	infoLumberjack := lumberjack.Logger{
 		Filename:   fmt.Sprintf(LoggerConfig.FilePath, time.Now().Format("2006-01-02")), // 日志文件路径
 		MaxSize:    LoggerConfig.MaxSize,                                                // 每个日志文件保存的大小 单位:M
@@ -64,8 +62,12 @@ func init() {
 		MaxBackups: LoggerConfig.MaxBackups,                                             // 日志文件最多保存多少个备份
 		Compress:   false,                                                               // 是否压缩
 	}
-
 	coreList = append(coreList, zapcore.NewCore(encoder, zapcore.AddSync(&infoLumberjack), zapcore.InfoLevel))
+
+	if LoggerConfig.Level == "debug" {
+		coreList = append(coreList, zapcore.NewCore(encoder, zapcore.AddSync(os.Stdout), zapcore.DebugLevel))
+	}
+
 	errLumberjack := lumberjack.Logger{
 		Filename:   fmt.Sprintf(LoggerConfig.ErrFilePath, time.Now().Format("2006-01-02")), // 日志文件路径
 		MaxSize:    LoggerConfig.MaxSize,                                                   // 每个日志文件保存的大小 单位:M
