@@ -1,6 +1,6 @@
 package cache
 
-type Cache[K string | int64, V any] interface {
+type ICache[K string | int64, V any] interface {
 	Get(id K) *V
 	GetAll() []*V
 	Put(id K, v *V) *V
