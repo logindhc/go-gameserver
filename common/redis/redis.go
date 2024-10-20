@@ -49,6 +49,10 @@ func init() {
 		Password: RedisConfig.Password, // no password set
 		DB:       RedisConfig.DB,       // use default DB
 	})
+	_, err := redisClient.Ping(context.Background()).Result()
+	if err != nil {
+		panic(err)
+	}
 	RDB = redisClient
 	logger.Logger.Info("redis init success", zap.String("redis", redisClient.String()))
 }

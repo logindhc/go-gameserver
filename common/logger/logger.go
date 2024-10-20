@@ -25,11 +25,12 @@ var (
 )
 
 type Config struct {
-	Level      string `mapstructure:"level" json:"level" yaml:"level"`
-	FilePath   string `mapstructure:"file_path" json:"file_path" yaml:"file_path"`
-	MaxAge     int    `mapstructure:"max_age" json:"max_age" yaml:"max_age"`
-	MaxSize    int    `mapstructure:"max_size" json:"max_size" yaml:"max_size"`
-	MaxBackups int    `mapstructure:"max_backups" json:"max_backups" yaml:"max_backups"`
+	Level       string `mapstructure:"level" json:"level" yaml:"level"`
+	FilePath    string `mapstructure:"file_path" json:"file_path" yaml:"file_path"`
+	ErrFilePath string `mapstructure:"err_file_path" json:"err_file_path" yaml:"err_file_path"`
+	MaxAge      int    `mapstructure:"max_age" json:"max_age" yaml:"max_age"`
+	MaxSize     int    `mapstructure:"max_size" json:"max_size" yaml:"max_size"`
+	MaxBackups  int    `mapstructure:"max_backups" json:"max_backups" yaml:"max_backups"`
 }
 
 func initConfig() {
@@ -52,62 +53,40 @@ func init() {
 
 	initConfig()
 
-	filePath := LoggerConfig.FilePath
+	coreList := make([]zapcore.Core, 0)
 
-	debug := LoggerConfig.Level == "debug"
+	encoder := zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
+	coreList = append(coreList, zapcore.NewCore(encoder, zapcore.AddSync(os.Stdout), zapcore.DebugLevel))
+	infoLumberjack := lumberjack.Logger{
+		Filename:   fmt.Sprintf(LoggerConfig.FilePath, time.Now().Format("2006-01-02")), // 日志文件路径
+		MaxSize:    LoggerConfig.MaxSize,                                                // 每个日志文件保存的大小 单位:M
+		MaxAge:     LoggerConfig.MaxAge,                                                 // 文件最多保存多少天
+		MaxBackups: LoggerConfig.MaxBackups,                                             // 日志文件最多保存多少个备份
+		Compress:   false,                                                               // 是否压缩
+	}
 
-	hook := lumberjack.Logger{
-		Filename:   fmt.Sprintf(filePath, time.Now().Format("2006-01-02")), // 日志文件路径
-		MaxSize:    LoggerConfig.MaxSize,                                   // 每个日志文件保存的大小 单位:M
-		MaxAge:     LoggerConfig.MaxAge,                                    // 文件最多保存多少天
-		MaxBackups: LoggerConfig.MaxBackups,                                // 日志文件最多保存多少个备份
-		Compress:   false,                                                  // 是否压缩
+	coreList = append(coreList, zapcore.NewCore(encoder, zapcore.AddSync(&infoLumberjack), zapcore.InfoLevel))
+	errLumberjack := lumberjack.Logger{
+		Filename:   fmt.Sprintf(LoggerConfig.ErrFilePath, time.Now().Format("2006-01-02")), // 日志文件路径
+		MaxSize:    LoggerConfig.MaxSize,                                                   // 每个日志文件保存的大小 单位:M
+		MaxAge:     LoggerConfig.MaxAge * 2,                                                // 文件最多保存多少天
+		MaxBackups: LoggerConfig.MaxBackups,                                                // 日志文件最多保存多少个备份
+		Compress:   false,                                                                  // 是否压缩
 	}
-	defer hook.Close()
-	encoderConfig := zapcore.EncoderConfig{
-		MessageKey:     "msg",
-		LevelKey:       "level",
-		TimeKey:        "time",
-		NameKey:        "logger",
-		CallerKey:      "file",
-		StacktraceKey:  "stacktrace",
-		LineEnding:     zapcore.DefaultLineEnding,
-		EncodeLevel:    zapcore.LowercaseLevelEncoder,
-		EncodeTime:     zapcore.ISO8601TimeEncoder,
-		EncodeDuration: zapcore.SecondsDurationEncoder,
-		EncodeCaller:   zapcore.ShortCallerEncoder, // 短路径编码器
-		EncodeName:     zapcore.FullNameEncoder,
-	}
-	// 设置日志级别
-	atomicLevel := zap.NewAtomicLevel()
-	if debug {
-		atomicLevel.SetLevel(zap.DebugLevel)
-	} else {
-		atomicLevel.SetLevel(zap.InfoLevel)
-	}
-	var writes = []zapcore.WriteSyncer{zapcore.AddSync(&hook)}
-	// 如果是开发环境，同时在控制台上也输出
-	if debug {
-		writes = append(writes, zapcore.AddSync(os.Stdout))
-	}
-	core := zapcore.NewCore(
-		zapcore.NewConsoleEncoder(encoderConfig),
-		zapcore.NewMultiWriteSyncer(writes...),
-		atomicLevel,
-	)
+	coreList = append(coreList, zapcore.NewCore(encoder, zapcore.AddSync(&errLumberjack), zapcore.ErrorLevel))
 
+	core := zapcore.NewTee(coreList...)
 	// 开启开发模式，堆栈跟踪
 	caller := zap.AddCaller()
+
+	addCallerSkip := zap.AddCallerSkip(1)
+
+	addStacktrace := zap.AddStacktrace(zap.ErrorLevel)
+
 	// 开启文件及行号
 	development := zap.Development()
-
-	//// 设置初始化字段
-	//field := zap.Fields(zap.String("appName", name))
-	//global.Logger = zap.New(core, caller, development,field)
 	// 构造日志
-	Logger = zap.New(core, caller, development)
-
-	defer Logger.Sync()
+	Logger = zap.New(core, caller, addCallerSkip, development, addStacktrace)
 
 	Logger.Info("logger init success")
 }

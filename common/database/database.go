@@ -77,12 +77,12 @@ func connection(c *Config) *gorm.DB {
 	})
 	if err != nil {
 		logger.Logger.Error(fmt.Sprintf("%s connection error %v", c, err))
-		return nil
+		panic("connection db timeout")
 	}
 	sqlDB, err := db.DB()
 	if err != nil {
 		logger.Logger.Error(fmt.Sprintf("%s get db persistence error %v", c, err))
-		return nil
+		panic("get db persistence error")
 	}
 	sqlDB.SetMaxIdleConns(c.MaxIdleCount)
 	sqlDB.SetMaxOpenConns(c.MaxOpenCount)
