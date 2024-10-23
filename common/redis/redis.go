@@ -12,7 +12,7 @@ import (
 )
 
 var (
-	name, cfgType, path = "redis", "yml", "."
+	name, cfgType, path = "redis", "yml", "./conf"
 	RedisConfig         *Config
 	RDB                 *redis.Client
 	userIdRedisKey      = "openId:"

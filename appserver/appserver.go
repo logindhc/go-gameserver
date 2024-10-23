@@ -1,10 +1,11 @@
 package main
 
 import (
+	"bufio"
 	"context"
 	"fmt"
-	"gameserver/common/httpserver"
 	"gameserver/common/logger"
+	"gameserver/common/net/http"
 	"gameserver/common/persistence"
 	"os"
 	"os/signal"
@@ -14,6 +15,8 @@ import (
 )
 
 func main() {
+	gomaxprocs := runtime.GOMAXPROCS(runtime.NumCPU())
+	logger.Logger.Info(fmt.Sprintf("appserver start gomaxprocs %v", gomaxprocs))
 	ctx, cancel := context.WithCancel(context.Background())
 	// 监听关闭信号
 	sigChan := make(chan os.Signal, 1)
@@ -24,7 +27,7 @@ func main() {
 		cancel() // 取消上下文
 	}()
 
-	go httpserver.NewGin() // 将上下文传递给httpserver
+	go http.NewGinServer() // 将上下文传递给httpserver
 	go monitor(ctx)        // 将上下文传递给monitor
 
 	logger.Logger.Info("appserver start success")
@@ -40,6 +43,18 @@ func main() {
 	time.Sleep(3 * time.Second)
 
 	logger.Logger.Info("appserver has shut down successfully")
+}
+
+func scanner() {
+	// 从标准输入流中接收输入数据
+	input := bufio.NewScanner(os.Stdin)
+	for input.Scan() {
+		line := input.Text()
+		if line == "excel up" {
+
+			break
+		}
+	}
 }
 
 func monitor(ctx context.Context) {

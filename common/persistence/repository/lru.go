@@ -7,7 +7,6 @@ import (
 	"gameserver/common/persistence/cache"
 	"gorm.io/gorm"
 	"reflect"
-	"sync"
 	"time"
 )
 
@@ -16,7 +15,6 @@ type LruRepository[K string | int64, T any] struct {
 	db     *gorm.DB
 	buffer *buffer.DelayedBuffer[K, T]
 	prefix string
-	lock   *sync.Mutex
 }
 
 func NewLruRepository[K string | int64, T any](db *gorm.DB, prefix string) *LruRepository[K, T] {
@@ -27,7 +25,6 @@ func NewLruRepository[K string | int64, T any](db *gorm.DB, prefix string) *LruR
 		cache:  lruCache,
 		buffer: buffer.NewDelayedBuffer[K, T](db, lruCache, prefix),
 		prefix: prefix,
-		lock:   &sync.Mutex{},
 	}
 	return r
 }
@@ -38,8 +35,6 @@ func (r *LruRepository[K, T]) Get(id K) *T {
 	if entity != nil {
 		return entity
 	}
-	r.lock.Lock()
-	defer r.lock.Unlock()
 	// 如果缓存中没有，则从数据库中获取
 	tx := r.db.Where("id = ?", id).Find(&entity)
 

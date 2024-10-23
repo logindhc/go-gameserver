@@ -34,16 +34,16 @@ func Login(account *models.Account) (*models.User, error) {
 	userOpenId := account.OpenId
 	// 从redis 根据游戏生成的openId获取userId
 	userId := redis.GetLoginToken(userOpenId)
-	user := &models.User{}
+	user := models.User{}
 	if userId == 0 {
 		//where 查询
-		models.UserRepository.Where("open_id", userOpenId).First(user)
+		models.UserRepository.Where("open_id", userOpenId).Find(&user)
 		if user.ID != 0 {
 			userId = user.ID
 		}
 	}
 	if userId == 0 { //新玩家
-		user = &models.User{
+		user = models.User{
 			ID:            utils.UUID2INT(),
 			OpenId:        userOpenId,
 			Channel:       account.Channel,
@@ -51,8 +51,8 @@ func Login(account *models.Account) (*models.User, error) {
 			RegisterTime:  account.RegisterTime,
 			LastLoginTime: time.Now().Unix(),
 		}
-		user = models.UserRepository.Add(user)
+		models.UserRepository.Add(&user)
 	}
 	redis.SetLoginToken(userOpenId, user.ID)
-	return user, nil
+	return &user, nil
 }

@@ -13,13 +13,14 @@ import (
 	"net/http"
 	"net/http/httputil"
 	"os"
+	"runtime"
 	"runtime/debug"
 	"strings"
 	"time"
 )
 
 var (
-	name, cfgType, path = "logger", "yml", "."
+	name, cfgType, path = "logger", "yml", "./conf"
 	Logger              *zap.Logger
 	LoggerConfig        *Config
 )
@@ -31,6 +32,7 @@ type Config struct {
 	MaxAge      int    `mapstructure:"max_age" json:"max_age" yaml:"max_age"`
 	MaxSize     int    `mapstructure:"max_size" json:"max_size" yaml:"max_size"`
 	MaxBackups  int    `mapstructure:"max_backups" json:"max_backups" yaml:"max_backups"`
+	TimeFormat  string `mapstructure:"time_format" json:"time_format" yaml:"time_format"`
 }
 
 func initConfig() {
@@ -54,7 +56,9 @@ func init() {
 	initConfig()
 
 	coreList := make([]zapcore.Core, 0)
-	encoder := zapcore.NewConsoleEncoder(zap.NewDevelopmentEncoderConfig())
+	encoderConfig := zap.NewDevelopmentEncoderConfig()
+	encoderConfig.EncodeTime = CustomTimeFormatEncoder
+	encoder := zapcore.NewConsoleEncoder(encoderConfig)
 	infoLumberjack := lumberjack.Logger{
 		Filename:   fmt.Sprintf(LoggerConfig.FilePath, time.Now().Format("2006-01-02")), // 日志文件路径
 		MaxSize:    LoggerConfig.MaxSize,                                                // 每个日志文件保存的大小 单位:M
@@ -93,6 +97,21 @@ func init() {
 	Logger.Info("logger init success")
 }
 
+func getGoroutineID() uint64 {
+	var buf [64]byte
+	n := runtime.Stack(buf[:], false)
+	idField := strings.Fields(strings.TrimPrefix(string(buf[:n]), "goroutine "))[0]
+	id, err := fmt.Sscanf(idField, "%d", new(uint64))
+	if err == nil {
+		return uint64(id)
+	}
+	return 0
+}
+
+func CustomTimeFormatEncoder(t time.Time, encoder zapcore.PrimitiveArrayEncoder) {
+	encoder.AppendString(t.Format(LoggerConfig.TimeFormat))
+}
+
 func GinLogger(logger *zap.Logger) gin.HandlerFunc {
 	return func(c *gin.Context) {
 		start := time.Now()
@@ -110,6 +129,7 @@ func GinLogger(logger *zap.Logger) gin.HandlerFunc {
 			zap.String("user-agent", c.Request.UserAgent()),
 			zap.String("errors", c.Errors.ByType(gin.ErrorTypePrivate).String()),
 			zap.Duration("cost", cost),
+			zap.Uint64("goroutine_id", getGoroutineID()),
 		)
 	}
 }
@@ -181,6 +201,6 @@ func (l *GormLoggerAdapter) Trace(ctx context.Context, begin time.Time, fc func(
 	if err != nil {
 		l.Logger.Errorw("Database operation failed", zap.String("sql", sql), zap.Int64("rows_affected", rows), zap.Error(err))
 	} else {
-		//l.Logger.Infow("Database operation succeeded", zap.String("sql", sql), zap.Int64("rows_affected", rows))
+		l.Logger.Infow("Database operation succeeded", zap.String("sql", sql), zap.Int64("rows_affected", rows))
 	}
 }

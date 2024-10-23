@@ -12,7 +12,7 @@ import (
 var (
 	DEFAULT_DB, LOG_DB = "default", "log"
 
-	name, cfgType, path, key = "database", "yml", ".", "databases"
+	name, cfgType, path, key = "database", "yml", "./conf", "databases"
 	databases                = map[string]*gorm.DB{}
 	Configs                  = map[string]*Config{}
 )

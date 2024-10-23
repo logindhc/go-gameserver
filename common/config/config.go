@@ -7,7 +7,7 @@ import (
 )
 
 var (
-	name, cfgType, path = "server", "yml", "."
+	name, cfgType, path = "server", "yml", "./conf"
 	ServerConfig        *Config
 )
 
@@ -16,6 +16,7 @@ type Config struct {
 	TcpPort  string `mapstructure:"tcp_port" json:"tcp_port" yaml:"tcp_port"`
 	HttpPort string `mapstructure:"http_port" json:"http_port" yaml:"http_port"`
 	MisKey   string `mapstructure:"mis_key" json:"mis_key" yaml:"mis_key"`
+	OpenWS   bool   `mapstructure:"open_ws" json:"open_ws" yaml:"open_ws"`
 }
 
 func init() {

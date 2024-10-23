@@ -78,10 +78,10 @@ func (d *DelayedBuffer[K, T]) Update(entity *T) {
 // Remove 方法实现
 func (d *DelayedBuffer[K, T]) Remove(id K) {
 	d.deletes.Add(id)
+	defer d.deletes.Remove(id)
 	d.updates.Remove(id)
 	var entity T
 	d.db.Model(entity).Where("id = ?", id).Delete(nil)
-	d.deletes.Remove(id)
 	logger.Logger.Info(fmt.Sprintf("%s#id:%v 删除成功", d.prefix, id))
 }
 
@@ -91,13 +91,12 @@ func (d *DelayedBuffer[K, T]) RemoveAll() {
 	d.cache.Clear()
 	d.deletes.Clear()
 	d.updates.Clear()
-	var entity = new(*T)
+	var entity T
 	d.db.Delete(entity)
 }
 
 // Flush 方法实现
 func (d *DelayedBuffer[K, T]) Flush() {
-	// 处理更新
 	size := d.updates.Size()
 	if size <= 0 {
 		return

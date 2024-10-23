@@ -4,3 +4,4 @@ err_file_path: "./logs/err/%v.log"
 max_age: 7
 max_size: 128
 max_backups: 5
+time_format: "2006-01-02 15:04:05.00000"
