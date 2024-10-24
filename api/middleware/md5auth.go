@@ -5,7 +5,7 @@ import (
 	"gameserver/api/handler"
 	"gameserver/common/net/http/response"
 	"gameserver/common/utils"
-	"github.com/spf13/viper"
+	"gameserver/conf"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -25,7 +25,7 @@ func MD5Auth() gin.HandlerFunc {
 			return
 		}
 		time := loginBody.Time
-		sign := fmt.Sprintf("%s%d", viper.GetString("app.misKey"), time)
+		sign := fmt.Sprintf("%s%d", conf.GameConfig.App.MisKey, time)
 		if !utils.Sign(loginBody.Sign, sign) {
 			response.WriteJsonResponse(c, nil, http.StatusBadRequest, "sign error")
 			c.Abort()

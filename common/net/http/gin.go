@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"gameserver/api/middleware"
 	"gameserver/api/routes"
+	"gameserver/conf"
 	"gameserver/core/logger"
-	"github.com/spf13/viper"
 
 	"github.com/gin-gonic/gin"
 )
@@ -18,7 +18,7 @@ func NewGinServer() {
 	engine.Use(logger.GinLogger(logger.Logger), logger.GinRecovery(logger.Logger, true))
 	//添加websocket服务
 
-	if viper.GetBool("app.openWs") {
+	if conf.GameConfig.App.OpenWS {
 		engine.GET("/ws", middleware.WsHandler)
 	}
 	//添加预过滤器
@@ -27,7 +27,7 @@ func NewGinServer() {
 	engine.Use(middleware.JWTAuth())
 	//设置路由
 	routes.New(engine)
-	port := viper.GetString("app.httpPort")
+	port := conf.GameConfig.App.HttpPort
 	if port == "" {
 		port = ":8888"
 	}
