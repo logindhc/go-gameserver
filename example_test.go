@@ -1,15 +1,15 @@
-package gameserver
+package main
 
 import (
 	"fmt"
-	"gameserver/appserver/log"
-	"gameserver/appserver/models"
 	"gameserver/common/persistence/cache"
 	"gameserver/common/utils"
-	list "github.com/duke-git/lancet/v2/datastructure/list"
+	"gameserver/models"
 	"sync"
 	"testing"
 	"time"
+
+	list "github.com/duke-git/lancet/v2/datastructure/list"
 )
 
 func TestBuffer(t *testing.T) {

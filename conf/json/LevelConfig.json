@@ -1,0 +1,529 @@
+{
+	"1": {
+		"id": 1,
+		"SurvivalDays": 2,
+		"MonsterID": 1005,
+		"Count": 9,
+		"Respawn": 1212,
+		"MonsterSpawnType": 1,
+		"SpawnPoint": 12123,
+		"Reward": [2,18],
+		"LostReward": "{30021:2,30202:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"2": {
+		"id": 2,
+		"SurvivalDays": 2,
+		"MonsterID": 1004,
+		"Count": 6,
+		"Respawn": 1,
+		"MonsterSpawnType": 1,
+		"SpawnPoint": 2
+	},
+	"3": {
+		"id": 3,
+		"SurvivalDays": 2,
+		"MonsterID": 1021,
+		"Count": 1,
+		"Respawn": 232,
+		"MonsterSpawnType": 1,
+		"SpawnPoint": 22223,
+		"Reward": [2,16],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,302202:4}"
+	},
+	"4": {
+		"id": 4,
+		"SurvivalDays": 3,
+		"MonsterID": 10052,
+		"Count": 6,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"5": {
+		"id": 5,
+		"SurvivalDays": 3,
+		"MonsterID": 1022,
+		"Count": 3,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"6": {
+		"id": 6,
+		"SurvivalDays": 4,
+		"MonsterID": 1006,
+		"Count": 7,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"7": {
+		"id": 7,
+		"SurvivalDays": 4,
+		"MonsterID": 1023,
+		"Count": 5,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"8": {
+		"id": 8,
+		"SurvivalDays": 5,
+		"MonsterID": 1007,
+		"Count": 9,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"9": {
+		"id": 9,
+		"SurvivalDays": 5,
+		"MonsterID": 1024,
+		"Count": 7,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"10": {
+		"id": 10,
+		"SurvivalDays": 5,
+		"MonsterID": 1031,
+		"Count": 1,
+		"Respawn": 1,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"11": {
+		"id": 11,
+		"SurvivalDays": 6,
+		"MonsterID": 1007,
+		"Count": 9,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"12": {
+		"id": 12,
+		"SurvivalDays": 6,
+		"MonsterID": 1025,
+		"Count": 10,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"13": {
+		"id": 13,
+		"SurvivalDays": 7,
+		"MonsterID": 1008,
+		"Count": 11,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"14": {
+		"id": 14,
+		"SurvivalDays": 7,
+		"MonsterID": 1026,
+		"Count": 11,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"15": {
+		"id": 15,
+		"SurvivalDays": 8,
+		"MonsterID": 1009,
+		"Count": 13,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"16": {
+		"id": 16,
+		"SurvivalDays": 8,
+		"MonsterID": 1027,
+		"Count": 12,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"17": {
+		"id": 17,
+		"SurvivalDays": 9,
+		"MonsterID": 1010,
+		"Count": 15,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"18": {
+		"id": 18,
+		"SurvivalDays": 9,
+		"MonsterID": 1028,
+		"Count": 13,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"19": {
+		"id": 19,
+		"SurvivalDays": 10,
+		"MonsterID": 1011,
+		"Count": 17,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"20": {
+		"id": 20,
+		"SurvivalDays": 10,
+		"MonsterID": 1029,
+		"Count": 14,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"21": {
+		"id": 21,
+		"SurvivalDays": 10,
+		"MonsterID": 1032,
+		"Count": 1,
+		"Respawn": 1,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"22": {
+		"id": 22,
+		"SurvivalDays": 11,
+		"MonsterID": 1012,
+		"Count": 18,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"23": {
+		"id": 23,
+		"SurvivalDays": 11,
+		"MonsterID": 1030,
+		"Count": 15,
+		"Respawn": 1,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"24": {
+		"id": 24,
+		"SurvivalDays": 12,
+		"MonsterID": 1013,
+		"Count": 19,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"25": {
+		"id": 25,
+		"SurvivalDays": 12,
+		"MonsterID": 1030,
+		"Count": 16,
+		"Respawn": 1,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"26": {
+		"id": 26,
+		"SurvivalDays": 13,
+		"MonsterID": 1014,
+		"Count": 20,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"27": {
+		"id": 27,
+		"SurvivalDays": 13,
+		"MonsterID": 1030,
+		"Count": 17,
+		"Respawn": 1,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"28": {
+		"id": 28,
+		"SurvivalDays": 14,
+		"MonsterID": 1014,
+		"Count": 21,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"29": {
+		"id": 29,
+		"SurvivalDays": 14,
+		"MonsterID": 1030,
+		"Count": 18,
+		"Respawn": 1,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"30": {
+		"id": 30,
+		"SurvivalDays": 15,
+		"MonsterID": 1015,
+		"Count": 22,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"31": {
+		"id": 31,
+		"SurvivalDays": 15,
+		"MonsterID": 1030,
+		"Count": 19,
+		"Respawn": 1,
+		"MonsterSpawnType": 3
+	},
+	"32": {
+		"id": 32,
+		"SurvivalDays": 15,
+		"MonsterID": 1033,
+		"Count": 1,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"33": {
+		"id": 33,
+		"SurvivalDays": 16,
+		"MonsterID": 1013,
+		"Count": 25,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"34": {
+		"id": 34,
+		"SurvivalDays": 16,
+		"MonsterID": 1014,
+		"Count": 24,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"35": {
+		"id": 35,
+		"SurvivalDays": 16,
+		"MonsterID": 1015,
+		"Count": 23,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"36": {
+		"id": 36,
+		"SurvivalDays": 16,
+		"MonsterID": 1029,
+		"Count": 12,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"37": {
+		"id": 37,
+		"SurvivalDays": 16,
+		"MonsterID": 1030,
+		"Count": 6,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"38": {
+		"id": 38,
+		"SurvivalDays": 17,
+		"MonsterID": 1013,
+		"Count": 25,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"39": {
+		"id": 39,
+		"SurvivalDays": 17,
+		"MonsterID": 1014,
+		"Count": 24,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"40": {
+		"id": 40,
+		"SurvivalDays": 17,
+		"MonsterID": 1015,
+		"Count": 23,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"41": {
+		"id": 41,
+		"SurvivalDays": 17,
+		"MonsterID": 1029,
+		"Count": 12,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"42": {
+		"id": 42,
+		"SurvivalDays": 17,
+		"MonsterID": 1030,
+		"Count": 6,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"43": {
+		"id": 43,
+		"SurvivalDays": 18,
+		"MonsterID": 1013,
+		"Count": 25,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"44": {
+		"id": 44,
+		"SurvivalDays": 18,
+		"MonsterID": 1014,
+		"Count": 24,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"45": {
+		"id": 45,
+		"SurvivalDays": 18,
+		"MonsterID": 1015,
+		"Count": 23,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"46": {
+		"id": 46,
+		"SurvivalDays": 18,
+		"MonsterID": 1029,
+		"Count": 12,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"47": {
+		"id": 47,
+		"SurvivalDays": 18,
+		"MonsterID": 1030,
+		"Count": 6,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"48": {
+		"id": 48,
+		"SurvivalDays": 19,
+		"MonsterID": 1013,
+		"Count": 25,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"49": {
+		"id": 49,
+		"SurvivalDays": 19,
+		"MonsterID": 1014,
+		"Count": 24,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"50": {
+		"id": 50,
+		"SurvivalDays": 19,
+		"MonsterID": 1015,
+		"Count": 23,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"51": {
+		"id": 51,
+		"SurvivalDays": 19,
+		"MonsterID": 1029,
+		"Count": 12,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"52": {
+		"id": 52,
+		"SurvivalDays": 19,
+		"MonsterID": 1030,
+		"Count": 6,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	},
+	"53": {
+		"id": 53,
+		"SurvivalDays": 20,
+		"MonsterID": 1013,
+		"Count": 25,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"54": {
+		"id": 54,
+		"SurvivalDays": 20,
+		"MonsterID": 1014,
+		"Count": 24,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"55": {
+		"id": 55,
+		"SurvivalDays": 20,
+		"MonsterID": 1015,
+		"Count": 23,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"56": {
+		"id": 56,
+		"SurvivalDays": 20,
+		"MonsterID": 1029,
+		"Count": 12,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"57": {
+		"id": 57,
+		"SurvivalDays": 20,
+		"MonsterID": 1030,
+		"Count": 6,
+		"Respawn": 2,
+		"MonsterSpawnType": 3
+	},
+	"58": {
+		"id": 58,
+		"SurvivalDays": 20,
+		"MonsterID": 1033,
+		"Count": 1,
+		"Respawn": 2,
+		"MonsterSpawnType": 3,
+		"Reward": [2,15],
+		"LostReward": "{3001:2,3002:2}",
+		"WinerReward": "{3001:4,3002:4}"
+	}
+}

@@ -2,15 +2,16 @@ package buffer
 
 import (
 	"fmt"
-	"gameserver/common/logger"
 	"gameserver/common/utils"
-	queue "github.com/duke-git/lancet/v2/datastructure/queue"
-	"gorm.io/gorm"
+	"gameserver/core/logger"
 	"math/rand"
 	"reflect"
 	"strings"
 	"sync"
 	"time"
+
+	queue "github.com/duke-git/lancet/v2/datastructure/queue"
+	"gorm.io/gorm"
 )
 
 type LoggerBuffer[K string | int64, T any] struct {

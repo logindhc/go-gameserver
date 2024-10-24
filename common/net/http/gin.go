@@ -2,10 +2,11 @@ package http
 
 import (
 	"fmt"
-	"gameserver/appserver/api/middleware"
-	"gameserver/appserver/api/routes"
-	"gameserver/common/config"
-	"gameserver/common/logger"
+	"gameserver/api/middleware"
+	"gameserver/api/routes"
+	"gameserver/core/logger"
+	"github.com/spf13/viper"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -16,7 +17,8 @@ func NewGinServer() {
 	//添加zap日志中间件
 	engine.Use(logger.GinLogger(logger.Logger), logger.GinRecovery(logger.Logger, true))
 	//添加websocket服务
-	if config.ServerConfig.OpenWS {
+
+	if viper.GetBool("app.openWs") {
 		engine.GET("/ws", middleware.WsHandler)
 	}
 	//添加预过滤器
@@ -25,15 +27,15 @@ func NewGinServer() {
 	engine.Use(middleware.JWTAuth())
 	//设置路由
 	routes.New(engine)
-	port := config.ServerConfig.HttpPort
+	port := viper.GetString("app.httpPort")
 	if port == "" {
-		return
+		port = ":8888"
 	}
 	logger.Logger.Info(fmt.Sprintf("start http server success, port %s", port))
 	//开启服务器，不填默认监听localhost:8080
 	err := engine.Run(port)
 	if err != nil {
-		logger.Logger.Info(fmt.Sprintf("start http server error：%v", err))
+		logger.Logger.Error(fmt.Sprintf("start http server error：%v", err))
 		panic(err)
 	}
 }

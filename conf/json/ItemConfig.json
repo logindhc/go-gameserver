@@ -1,0 +1,467 @@
+{
+	"10001": {
+		"id": 10001,
+		"ItemName": "建筑碎片",
+		"ItemIcon": 10001,
+		"ItemType": 12,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10002": {
+		"id": 10002,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,2,2],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,2]]
+	},
+	"10003": {
+		"id": 10003,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,3,3],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,3]]
+	},
+	"10004": {
+		"id": 10004,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,4,4],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,4]]
+	},
+	"10005": {
+		"id": 10005,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,5,5],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,5]]
+	},
+	"10006": {
+		"id": 10006,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,6,6],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,6]]
+	},
+	"10007": {
+		"id": 10007,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,7,7],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,7]]
+	},
+	"10008": {
+		"id": 10008,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,8,8],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,8]]
+	},
+	"10009": {
+		"id": 10009,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,9,9],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,9]]
+	},
+	"10010": {
+		"id": 10010,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,10,10],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,10]]
+	},
+	"10011": {
+		"id": 10011,
+		"ItemName": "小宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3001,11,11],
+		"UseParm": [[1,10],[5,10]],
+		"ItemShow": [[10001,11]]
+	},
+	"10012": {
+		"id": 10012,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,4,4],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,2],[1,100]]
+	},
+	"10013": {
+		"id": 10013,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,5,5],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,3],[1,100]]
+	},
+	"10014": {
+		"id": 10014,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,6,6],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,4],[1,100]]
+	},
+	"10015": {
+		"id": 10015,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,7,7],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,5],[1,100]]
+	},
+	"10016": {
+		"id": 10016,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,8,8],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,6],[1,100]]
+	},
+	"10017": {
+		"id": 10017,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,9,9],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,7],[1,100]]
+	},
+	"10018": {
+		"id": 10018,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,10,10],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,8],[1,100]]
+	},
+	"10019": {
+		"id": 10019,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,11,11],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,9],[1,100]]
+	},
+	"10020": {
+		"id": 10020,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,12,12],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,10],[1,100]]
+	},
+	"10021": {
+		"id": 10021,
+		"ItemName": "大宝箱",
+		"ItemIcon": 10001,
+		"ItemType": 2,
+		"ItemQuality": 1,
+		"ItemUse": 1,
+		"ItemBundle": 1,
+		"Weight": [3002,13,13],
+		"UseParm": [[1,100],[5,20]],
+		"ItemShow": [[10001,11],[1,100]]
+	},
+	"10201": {
+		"id": 10201,
+		"ItemName": "箭塔碎片",
+		"ItemIcon": 10201,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10202": {
+		"id": 10202,
+		"ItemName": "机枪塔碎片",
+		"ItemIcon": 10202,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10203": {
+		"id": 10203,
+		"ItemName": "火炮塔碎片",
+		"ItemIcon": 10203,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10204": {
+		"id": 10204,
+		"ItemName": "城墙碎片",
+		"ItemIcon": 10204,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10205": {
+		"id": 10205,
+		"ItemName": "修理厂碎片",
+		"ItemIcon": 10205,
+		"ItemType": 1,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10206": {
+		"id": 10206,
+		"ItemName": "电塔碎片",
+		"ItemIcon": 10206,
+		"ItemType": 1,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10207": {
+		"id": 10207,
+		"ItemName": "电力塔碎片",
+		"ItemIcon": 10207,
+		"ItemType": 1,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10208": {
+		"id": 10208,
+		"ItemName": "喷火塔碎片",
+		"ItemIcon": 10208,
+		"ItemType": 1,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10209": {
+		"id": 10209,
+		"ItemName": "低温塔碎片",
+		"ItemIcon": 10209,
+		"ItemType": 1,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10210": {
+		"id": 10210,
+		"ItemName": "导弹塔碎片",
+		"ItemIcon": 10210,
+		"ItemType": 1,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10301": {
+		"id": 10301,
+		"ItemName": "民兵营地碎片",
+		"ItemIcon": 10301,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10302": {
+		"id": 10302,
+		"ItemName": "斗士营地碎片",
+		"ItemIcon": 10302,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10303": {
+		"id": 10303,
+		"ItemName": "斧兵营地碎片",
+		"ItemIcon": 10303,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10304": {
+		"id": 10304,
+		"ItemName": "医疗营地碎片",
+		"ItemIcon": 10304,
+		"ItemType": 1,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10305": {
+		"id": 10305,
+		"ItemName": "爆破营地碎片",
+		"ItemIcon": 10305,
+		"ItemType": 1,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10306": {
+		"id": 10306,
+		"ItemName": "酒吧碎片",
+		"ItemIcon": 10306,
+		"ItemType": 1,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10307": {
+		"id": 10307,
+		"ItemName": "镭射营地碎片",
+		"ItemIcon": 10307,
+		"ItemType": 1,
+		"ItemQuality": 2,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10308": {
+		"id": 10308,
+		"ItemName": "机甲营地碎片",
+		"ItemIcon": 10308,
+		"ItemType": 1,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10309": {
+		"id": 10309,
+		"ItemName": "研究所碎片",
+		"ItemIcon": 10309,
+		"ItemType": 1,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10310": {
+		"id": 10310,
+		"ItemName": "生化营地碎片",
+		"ItemIcon": 10310,
+		"ItemType": 1,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10401": {
+		"id": 10401,
+		"ItemName": "修理厂",
+		"ItemIcon": 10401,
+		"ItemType": 4,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10402": {
+		"id": 10402,
+		"ItemName": "医疗营地",
+		"ItemIcon": 10402,
+		"ItemType": 4,
+		"ItemQuality": 1,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10403": {
+		"id": 10403,
+		"ItemName": "低温塔",
+		"ItemIcon": 10403,
+		"ItemType": 4,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	},
+	"10404": {
+		"id": 10404,
+		"ItemName": "机甲营地",
+		"ItemIcon": 10404,
+		"ItemType": 4,
+		"ItemQuality": 3,
+		"ItemUse": 0,
+		"ItemBundle": 0
+	}
+}

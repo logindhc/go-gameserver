@@ -2,12 +2,13 @@ package repository
 
 import (
 	"fmt"
-	"gameserver/common/logger"
 	"gameserver/common/persistence/buffer"
 	"gameserver/common/persistence/cache"
-	"gorm.io/gorm"
+	"gameserver/core/logger"
 	"reflect"
 	"time"
+
+	"gorm.io/gorm"
 )
 
 type LruRepository[K string | int64, T any] struct {
