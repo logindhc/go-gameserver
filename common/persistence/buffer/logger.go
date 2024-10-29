@@ -126,7 +126,7 @@ func (d *LoggerBuffer[K, T]) flush() {
 		for i := 0; i < len(temp); i++ {
 			field := temp[i]
 			if field.isNull {
-				return
+				continue
 			}
 			if field.isMonthShared {
 				monthShardingVal = field.fieldVal.(int)
